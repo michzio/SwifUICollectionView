@@ -46,7 +46,7 @@ struct CollectionView: UIViewControllerRepresentable {
     func updateUIViewController(_ controller: CollectionViewController, context: Context) {
        
         controller.snapshot = snapshotForCurrentState()
-        controller.collectionView.reloadData()
+        controller.reloadDataSource()
     }
     
     

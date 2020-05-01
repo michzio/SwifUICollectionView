@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Section: CaseIterable {
+enum Section: String, CaseIterable {
     case feature
     case categories
 }
