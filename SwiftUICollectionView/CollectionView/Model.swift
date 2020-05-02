@@ -28,5 +28,16 @@ class Item: Hashable {
         lhs.identifier == rhs.identifier
     }
     
-    private let identifier = UUID()
+    let identifier = UUID()
+}
+
+extension Item {
+    
+    static let featureItems: [Item] = {
+        (0..<10/*_000*/).map { Item(title: "Feature Item \($0)")}
+    }()
+
+    static let categoryItems: [Item] = {
+        (0..<10/*_000*/).map { Item(title: "Category Item \($0)")}
+    }()
 }

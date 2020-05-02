@@ -38,6 +38,8 @@ struct CollectionView: UIViewControllerRepresentable {
         controller.content = content
         controller.snapshot = snapshotForCurrentState()
         
+        controller.collectionView.register(HostingControllerCollectionViewCell<AnyView>.self, forCellWithReuseIdentifier: HostingControllerCollectionViewCell<AnyView>.reuseIdentifier)
+        
         controller.collectionView.delegate = context.coordinator
         
         return controller
@@ -45,8 +47,20 @@ struct CollectionView: UIViewControllerRepresentable {
     
     func updateUIViewController(_ controller: CollectionViewController, context: Context) {
        
-        controller.snapshot = snapshotForCurrentState()
-        controller.reloadDataSource()
+        print("updating controller...")
+        controller.snapshot = self.snapshotForCurrentState()
+    
+        /* TODO:
+         for UICollectionViewFlowLayout
+         - solve why this causes crashes - if animating true
+         - solve why this causes empty collectionview - if animating false
+         for UICollectionViewCompositionalLayout
+         - solve why this causes empty collectionview - if animating false
+         - solve why this causes crashes - if animating true
+         */
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+           controller.reloadDataSource(animating: false)
+        }
     }
     
     

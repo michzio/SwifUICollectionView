@@ -15,10 +15,9 @@ class CollectionViewController: UIViewController {
     var snapshot: NSDiffableDataSourceSnapshot<Section, Item>! = nil
     var content: ((_ indexPath: IndexPath, _ item: Item) -> AnyView)! = nil
     
-    let queue = DispatchQueue(label: "diffQueue")
-    
     lazy var dataSource: UICollectionViewDiffableDataSource<Section, Item> = {
         let dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView, cellProvider: cellProvider)
+        //dataSource.supplementaryViewProvider = supplementaryViewProvider
         return dataSource
     }()
     
@@ -29,8 +28,6 @@ class CollectionViewController: UIViewController {
         return collectionView
     }()
     
-    var isLoaded: Bool = false
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,16 +35,16 @@ class CollectionViewController: UIViewController {
         
         // load initial data
         reloadDataSource()
-        
-        isLoaded = true
     }
 }
 
 extension CollectionViewController {
     
     func reloadDataSource(animating: Bool = false) {
-    
-        dataSource.apply(snapshot, animatingDifferences: animating) {
+
+        print("reloading data source with snapshot -> \(snapshot.numberOfItems)")
+        
+        self.dataSource.apply(self.snapshot, animatingDifferences: animating) {
             print("applying snapshot completed!")
         }
     }
@@ -60,6 +57,8 @@ extension CollectionViewController {
         
         collectionView.register(HostingControllerCollectionViewCell<AnyView>.self, forCellWithReuseIdentifier: HostingControllerCollectionViewCell<AnyView>.reuseIdentifier)
         
+        collectionView.register(ItemCell.self, forCellWithReuseIdentifier: ItemCell.reuseIdentifier)
+        
         collectionView.delegate = self
         
         print("configured collection view")
@@ -68,15 +67,31 @@ extension CollectionViewController {
     private func cellProvider(collectionView: UICollectionView, indexPath: IndexPath, item: Item) -> UICollectionViewCell? {
         
         print("providing cell for \(indexPath)...")
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemCell.reuseIdentifier, for: indexPath) as? ItemCell else {
+            fatalError("Could not load cell")
+        }
+        
+        cell.label.text = "\(indexPath)"
+        
+        /*
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HostingControllerCollectionViewCell<AnyView>.reuseIdentifier, for: indexPath) as? HostingControllerCollectionViewCell<AnyView> else {
             fatalError("Could not load cell")
         }
         
         //cell.host(AnyView(Text(item.title)))
         cell.host(content(indexPath, item))
+        cell.backgroundColor = .green
+        */
         
         return cell
     }
+    
+    /* TODO
+    private func supplementaryViewProvider(collectionView: UICollectionView, kind: String, indexPath: IndexPath) -> UICollectionReusableView? {
+        
+        
+    }*/
 }
 
 extension CollectionViewController: UICollectionViewDelegate {

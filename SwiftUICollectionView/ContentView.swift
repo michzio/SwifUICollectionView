@@ -17,8 +17,8 @@ struct ContentView: View {
         CollectionView(layout: UICollectionView.generateCompositionalLayout(),
                        sections: self.sections,
                        items: [
-                        .feature : featureItems,
-                        .categories : categoryItems
+                        .feature : Item.featureItems,
+                        .categories : Item.categoryItems
                         ],
                        content: { indexPath, item in
             
@@ -29,12 +29,4 @@ struct ContentView: View {
             self.sections = [.categories]
         }
     }
-}
-
-var featureItems: [Item] {
-    (0..<100).map { Item(title: "Feature Item \($0)")}
-}
-
-var categoryItems: [Item] {
-    (0..<100).map { Item(title: "Category Item \($0)")}
 }
