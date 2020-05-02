@@ -14,19 +14,32 @@ struct ContentView: View {
     
     var body: some View {
        
-        CollectionView(layout: UICollectionView.generateCompositionalLayout(),
-                       sections: self.sections,
-                       items: [
-                        .feature : Item.featureItems,
-                        .categories : Item.categoryItems
-                        ],
-                       content: { indexPath, item in
+        ZStack {
+            CollectionView(layout: UICollectionView.generateCompositionalLayout(),
+                           sections: self.sections,
+                           items: [
+                            .feature : Item.featureItems,
+                            .categories : Item.categoryItems
+                            ],
+                           content: { indexPath, item in
+                
+                            AnyView(Text("\(self.sections.first!.rawValue) (\(indexPath.section), \(indexPath.row))"))
+            })
             
-                        AnyView(Text("\(self.sections.first!.rawValue) (\(indexPath.section), \(indexPath.row))"))
-        })
-        .onTapGesture {
-            print("Tap gesture!")
-            self.sections = [.categories]
+            VStack {
+                Spacer()
+                Button(action: {
+                    if self.sections.contains(.categories) {
+                        self.sections = [.feature]
+                    } else {
+                        self.sections = [.categories]
+                    }
+                }) {
+                    Text("Change!")
+                }
+                .padding(8)
+                .background(Color.yellow)
+            }
         }
     }
 }

@@ -9,47 +9,62 @@
 import UIKit
 import SwiftUI
 
+protocol CollectionViewControllerDelegate: class {
+    func collectionView(_ collectionView: UICollectionView, didSelectItem: Item, at indexPath: IndexPath)
+}
+
 class CollectionViewController: UIViewController {
     
+    // MARK: - Injections
     var layout: UICollectionViewLayout! = nil
     var snapshot: NSDiffableDataSourceSnapshot<Section, Item>! = nil
     var content: ((_ indexPath: IndexPath, _ item: Item) -> AnyView)! = nil
+    weak var delegate: CollectionViewControllerDelegate? = nil
     
-    lazy var dataSource: UICollectionViewDiffableDataSource<Section, Item> = {
-        let dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView, cellProvider: cellProvider)
-        //dataSource.supplementaryViewProvider = supplementaryViewProvider
-        return dataSource
-    }()
+    // MARK: - Properties
+    private(set) var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
+    private let diffQueue = DispatchQueue.global(qos: .background)
     
-    lazy var collectionView: UICollectionView = {
+    // MARK: - Views
+    private(set) lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionView.backgroundColor = .red //.clear
         return collectionView
     }()
     
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureCollectionView()
+        configureDataSource()
         
         // load initial data
-        reloadDataSource()
+        reloadDataSource(animating: false)
     }
 }
 
+/*
+// MARK: - Init
 extension CollectionViewController {
     
-    func reloadDataSource(animating: Bool = false) {
-
-        print("reloading data source with snapshot -> \(snapshot.numberOfItems)")
-        
-        self.dataSource.apply(self.snapshot, animatingDifferences: animating) {
-            print("applying snapshot completed!")
-        }
-    }
+      convenience init() {
+          self.init(layout: UICollectionViewFlowLayout())
+      }
+      
+      init(layout: UICollectionViewLayout) {
+          self.layout = layout
+          super.init(nibName: nil, bundle: nil)
+      }
+      
+      required init?(coder: NSCoder) {
+          fatalError("init(coder:) has not been implemented")
+      }
 }
+*/
 
+// MARK: - Setup
 extension CollectionViewController {
     
     private func configureCollectionView() {
@@ -57,16 +72,55 @@ extension CollectionViewController {
         
         collectionView.register(HostingControllerCollectionViewCell<AnyView>.self, forCellWithReuseIdentifier: HostingControllerCollectionViewCell<AnyView>.reuseIdentifier)
         
-        collectionView.register(ItemCell.self, forCellWithReuseIdentifier: ItemCell.reuseIdentifier)
+        //collectionView.register(ItemCell.self, forCellWithReuseIdentifier: ItemCell.reuseIdentifier)
         
         collectionView.delegate = self
-        
-        print("configured collection view")
     }
+    
+    private func configureDataSource() {
+        
+        dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView, cellProvider: cellProvider)
+        
+        dataSource.supplementaryViewProvider = supplementaryViewProvider
+    }
+}
+
+// MARK: - Data Source
+extension CollectionViewController {
+    
+    func reloadDataSource(animating: Bool = false) {
+        
+        diffQueue.async {
+        //DispatchQueue.main.async {
+            self.dataSource.apply(self.snapshot, animatingDifferences: animating)
+        }
+    }
+}
+
+// MARK: - Item Providers
+extension CollectionViewController {
     
     private func cellProvider(collectionView: UICollectionView, indexPath: IndexPath, item: Item) -> UICollectionViewCell? {
         
         print("providing cell for \(indexPath)...")
+    
+        //return itemCellProvider(collectionView, indexPath, item)
+        return contentCellProvider(collectionView, indexPath, item)
+    }
+    
+    private func contentCellProvider(_ collectionView: UICollectionView, _ indexPath: IndexPath, _ item: Item) -> UICollectionViewCell? {
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HostingControllerCollectionViewCell<AnyView>.reuseIdentifier, for: indexPath) as? HostingControllerCollectionViewCell<AnyView> else {
+            fatalError("Could not load cell")
+        }
+        
+        cell.host(content(indexPath, item))
+        cell.backgroundColor = .green
+        
+        return cell
+    }
+    
+    private func itemCellProvider(_ collectionView: UICollectionView, _ indexPath: IndexPath, _ item: Item) -> UICollectionViewCell? {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemCell.reuseIdentifier, for: indexPath) as? ItemCell else {
             fatalError("Could not load cell")
@@ -74,32 +128,24 @@ extension CollectionViewController {
         
         cell.label.text = "\(indexPath)"
         
-        /*
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HostingControllerCollectionViewCell<AnyView>.reuseIdentifier, for: indexPath) as? HostingControllerCollectionViewCell<AnyView> else {
-            fatalError("Could not load cell")
-        }
-        
-        //cell.host(AnyView(Text(item.title)))
-        cell.host(content(indexPath, item))
-        cell.backgroundColor = .green
-        */
-        
         return cell
     }
     
-    /* TODO
     private func supplementaryViewProvider(collectionView: UICollectionView, kind: String, indexPath: IndexPath) -> UICollectionReusableView? {
         
-        
-    }*/
+        return nil
+    }
 }
 
+// MARK: - Delegate
 extension CollectionViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
-        
+
         print("Item selected: \(item)")
+        
+        delegate?.collectionView(collectionView, didSelectItem: item, at: indexPath)
     }
 }

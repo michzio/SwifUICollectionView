@@ -15,6 +15,7 @@ struct CollectionView: UIViewControllerRepresentable {
     let layout: UICollectionViewLayout
     let sections: [Section]
     let items: [Section: [Item]]
+    let animateChanges: Bool?
     
     // MARK: - Actions
     let content: (_ indexPath: IndexPath, _ item: Item) -> AnyView
@@ -22,11 +23,14 @@ struct CollectionView: UIViewControllerRepresentable {
     init(layout: UICollectionViewLayout,
          sections: [Section],
          items: [Section: [Item]],
+         animateChanges: Bool? = nil,
          @ViewBuilder content:  @escaping (_ indexPath: IndexPath, _ item: Item) -> AnyView) {
         self.layout = layout
         
         self.sections = sections
         self.items = items
+        
+        self.animateChanges = animateChanges
         
         self.content = content
     }
@@ -38,9 +42,7 @@ struct CollectionView: UIViewControllerRepresentable {
         controller.content = content
         controller.snapshot = snapshotForCurrentState()
         
-        controller.collectionView.register(HostingControllerCollectionViewCell<AnyView>.self, forCellWithReuseIdentifier: HostingControllerCollectionViewCell<AnyView>.reuseIdentifier)
-        
-        controller.collectionView.delegate = context.coordinator
+        controller.delegate = context.coordinator
         
         return controller
     }
@@ -48,21 +50,17 @@ struct CollectionView: UIViewControllerRepresentable {
     func updateUIViewController(_ controller: CollectionViewController, context: Context) {
        
         print("updating controller...")
+        let animating = self.animateChanges ?? smallItemsCount()
+        
         controller.snapshot = self.snapshotForCurrentState()
-    
-        /* TODO:
-         for UICollectionViewFlowLayout
-         - solve why this causes crashes - if animating true
-         - solve why this causes empty collectionview - if animating false
-         for UICollectionViewCompositionalLayout
-         - solve why this causes empty collectionview - if animating false
-         - solve why this causes crashes - if animating true
-         */
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
-           controller.reloadDataSource(animating: false)
-        }
+        controller.reloadDataSource(animating: animating)
     }
     
+    func smallItemsCount() -> Bool {
+        items.reduce(0) { (res, items) in
+            res + items.1.count
+        } < 1000
+    }
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
