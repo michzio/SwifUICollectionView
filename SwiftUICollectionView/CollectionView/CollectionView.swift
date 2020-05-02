@@ -15,15 +15,19 @@ struct CollectionView: UIViewControllerRepresentable {
     let layout: UICollectionViewLayout
     let sections: [Section]
     let items: [Section: [Item]]
+    let supplementaryKinds: [String]
     let animateChanges: Bool?
     
     // MARK: - Actions
     let content: (_ indexPath: IndexPath, _ item: Item) -> AnyView
+    let supplementaryContent: ((_ kind: String, _ indexPath: IndexPath, _ item: Item?) -> AnyView)?
    
     init(layout: UICollectionViewLayout,
          sections: [Section],
          items: [Section: [Item]],
+         supplementaryKinds: [String] = [],
          animateChanges: Bool? = nil,
+         supplementaryContent: ((_ kind: String, _ IndexPath: IndexPath, _ item: Item?) -> AnyView)? = nil,
          @ViewBuilder content:  @escaping (_ indexPath: IndexPath, _ item: Item) -> AnyView) {
         self.layout = layout
         
@@ -31,6 +35,9 @@ struct CollectionView: UIViewControllerRepresentable {
         self.items = items
         
         self.animateChanges = animateChanges
+        
+        self.supplementaryKinds = supplementaryKinds
+        self.supplementaryContent = supplementaryContent
         
         self.content = content
     }
@@ -40,6 +47,9 @@ struct CollectionView: UIViewControllerRepresentable {
         let controller = CollectionViewController()
         controller.layout = layout
         controller.content = content
+        controller.supplementaryKinds = supplementaryKinds
+        controller.supplementaryContent = supplementaryContent
+        
         controller.snapshot = snapshotForCurrentState()
         
         controller.delegate = context.coordinator

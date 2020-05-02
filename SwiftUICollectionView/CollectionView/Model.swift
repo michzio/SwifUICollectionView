@@ -34,10 +34,22 @@ class Item: Hashable {
 extension Item {
     
     static let featureItems: [Item] = {
-        (0..<1_000_000).map { Item(title: "Feature Item \($0)")}
+        (0..<1_0/*00_000*/).map { Item(title: "Feature Item \($0)")}
     }()
 
     static let categoryItems: [Item] = {
-        (0..<1_000_000).map { Item(title: "Category Item \($0)")}
+        (0..<1_0/*00_000*/).map { Item(title: "Category Item \($0)")}
     }()
+}
+
+
+extension Item : HasBadgeCount {
+    
+    var badgeCount: Int? {
+        let count = Int.random(in: 0...10)
+        if count % 2 == 0 {
+            return count
+        }
+        return nil 
+    }
 }

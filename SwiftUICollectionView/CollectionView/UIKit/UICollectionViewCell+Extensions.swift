@@ -9,8 +9,5 @@
 import UIKit
 
 extension UICollectionViewCell {
-    
-    @objc class var reuseIdentifier : String {
-        return String(describing: self)
-    }
+    // reuseIdentifier moved to UICollectionReusableView
 }

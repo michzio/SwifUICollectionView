@@ -19,6 +19,9 @@ class CollectionViewController: UIViewController {
     var layout: UICollectionViewLayout! = nil
     var snapshot: NSDiffableDataSourceSnapshot<Section, Item>! = nil
     var content: ((_ indexPath: IndexPath, _ item: Item) -> AnyView)! = nil
+
+    var supplementaryKinds: [String]! = nil
+    var supplementaryContent: ((_ kind: String, _ indexPath: IndexPath, _ item: Item?) -> AnyView)? = nil
     weak var delegate: CollectionViewControllerDelegate? = nil
     
     // MARK: - Properties
@@ -70,11 +73,26 @@ extension CollectionViewController {
     private func configureCollectionView() {
         view.addSubview(collectionView)
         
+        registerCells()
+        registerSupplementaryViews()
+    
+        collectionView.delegate = self
+    }
+    
+    private func registerCells() {
         collectionView.register(HostingControllerCollectionViewCell<AnyView>.self, forCellWithReuseIdentifier: HostingControllerCollectionViewCell<AnyView>.reuseIdentifier)
         
         //collectionView.register(ItemCell.self, forCellWithReuseIdentifier: ItemCell.reuseIdentifier)
         
-        collectionView.delegate = self
+    }
+    
+    private func registerSupplementaryViews() {
+        collectionView.register(BadgeSupplementaryView.self, forSupplementaryViewOfKind: "badge", withReuseIdentifier: BadgeSupplementaryView.reuseIdentifier)
+        collectionView.register(EmptySupplementaryView.self, forSupplementaryViewOfKind: "badge", withReuseIdentifier: EmptySupplementaryView.reuseIdentifier)
+        
+        supplementaryKinds.forEach { kind in
+            collectionView.register(HostingControllerCollectionReusableView<AnyView>.self, forSupplementaryViewOfKind: kind, withReuseIdentifier: HostingControllerCollectionReusableView<AnyView>.reuseIdentifier)
+        }
     }
     
     private func configureDataSource() {
@@ -132,8 +150,51 @@ extension CollectionViewController {
     }
     
     private func supplementaryViewProvider(collectionView: UICollectionView, kind: String, indexPath: IndexPath) -> UICollectionReusableView? {
+    
+        if kind == "badge" {
+            return badgeViewProvider(collectionView, kind, indexPath)
+        } else {
+            return contentSupplementaryProvider(collectionView, kind, indexPath)
+        }
+    }
+    
+    private func contentSupplementaryProvider(_ collectionView: UICollectionView, _ kind: String, _ indexPath: IndexPath) -> UICollectionReusableView? {
         
-        return nil
+        guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HostingControllerCollectionReusableView<AnyView>.reuseIdentifier, for: indexPath) as? HostingControllerCollectionReusableView<AnyView> else {
+            fatalError("Could not load supplementary view")
+        }
+        
+        let item = self.dataSource.itemIdentifier(for: indexPath)
+        
+        guard let content = self.supplementaryContent?(kind, indexPath, item) else {
+            fatalError("Supplementary view content not provided for kind: \(kind), indexPath: \(indexPath). Please provide supplementaryContent closure parameter to CollectionView returning some View and provide kind in supplementaryKinds array parameter. Or remove this kind: \(kind) from layout definition.")
+        }
+        
+        view.host(content)
+        
+        return view
+    }
+    
+    private func badgeViewProvider(_ collectionView: UICollectionView, _ kind: String, _ indexPath: IndexPath) -> UICollectionReusableView? {
+        
+        if let item = self.dataSource.itemIdentifier(for: indexPath),
+            item is HasBadgeCount,
+            let badgeCount = item.badgeCount {
+            
+            guard let badgeView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: BadgeSupplementaryView.reuseIdentifier, for: indexPath) as? BadgeSupplementaryView else {
+                fatalError("Cannot create badge supplementary")
+            }
+            
+            badgeView.label.text = "\(badgeCount)"
+            return badgeView
+        } else {
+            
+            guard let emptyView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: EmptySupplementaryView.reuseIdentifier, for: indexPath) as? EmptySupplementaryView else {
+                fatalError("Cannot create badge supplementary")
+            }
+            
+            return emptyView
+        }
     }
 }
 

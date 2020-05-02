@@ -10,18 +10,30 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var sections: [Section] = [.feature]
+    @State var sections: [Section] = [.feature, .categories]
     
     var body: some View {
        
         ZStack {
-            CollectionView(layout: UICollectionView.generateCompositionalLayout(),
+            CollectionView(layout: createLayout(),
                            sections: self.sections,
                            items: [
                             .feature : Item.featureItems,
                             .categories : Item.categoryItems
                             ],
-                           content: { indexPath, item in
+                           supplementaryKinds: ["header", "footer"],
+                           supplementaryContent: { kind, indexPath, item in
+                        
+                            switch kind {
+                            case "header":
+                                return AnyView(Text("Header").font(.system(size: indexPath.section == 0 ? 30 : 16)))
+                            case "footer":
+                                return AnyView(Text("Footer"))
+                            default:
+                                return AnyView(EmptyView())
+                            }
+            },
+            content: { indexPath, item in
                 
                             AnyView(Text("\(self.sections.first!.rawValue) (\(indexPath.section), \(indexPath.row))"))
             })
@@ -29,10 +41,10 @@ struct ContentView: View {
             VStack {
                 Spacer()
                 Button(action: {
-                    if self.sections.contains(.categories) {
-                        self.sections = [.feature]
+                    if self.sections.first == .categories {
+                        self.sections = [.feature, .categories]
                     } else {
-                        self.sections = [.categories]
+                        self.sections = [.categories, .feature]
                     }
                 }) {
                     Text("Change!")
@@ -41,5 +53,119 @@ struct ContentView: View {
                 .background(Color.yellow)
             }
         }
+    }
+    
+    private func createLayout() -> UICollectionViewLayout {
+        //createTwoColumnLayout()
+        createTwoSectionLayout()
+    }
+    
+    private func createTwoColumnLayout() -> UICollectionViewLayout {
+    
+        let section = createTwoColumnSection()
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        return layout
+    }
+    
+    private func createTwoSectionLayout() -> UICollectionViewLayout {
+        let section1 = self.createHorizontalSection()
+        let section2 = self.createTwoColumnSection(hasBadges: true)
+        
+        let layout = UICollectionViewCompositionalLayout { (sectionIndex, environment) in
+            
+            switch sectionIndex {
+            case 0:
+                return section1
+            case 1:
+                return section2
+            default:
+                fatalError()
+            }
+            
+        }
+        
+        //addDecorationItem(to: layout, section: section1)
+        //addDecorationItem(to: layout, section: section2)
+        
+        return layout
+    }
+    
+    private func createHorizontalSection() -> NSCollectionLayoutSection {
+        
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(250))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .paging
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        
+         section.boundarySupplementaryItems = [createHeader(isPinned: true), createFooter(isPinned: true)]
+        
+        return section
+    }
+    
+    private func createTwoColumnSection(hasBadges: Bool = false) -> NSCollectionLayoutSection {
+        
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize, supplementaryItems: hasBadges ? [createBadge()] : [])
+        item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalWidth(0.2))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        
+        section.boundarySupplementaryItems = [createHeader(isPinned: true), createFooter(isPinned: true)]
+        
+        return section
+    }
+    
+    private func createBadge() -> NSCollectionLayoutSupplementaryItem {
+        
+        let badgeAnchor = NSCollectionLayoutAnchor(edges: [.top, .trailing], fractionalOffset: CGPoint(x: 0.3, y: -0.3))
+        
+        let badgeSize = NSCollectionLayoutSize(widthDimension: .absolute(20), heightDimension: .absolute(20))
+        
+        let badge = NSCollectionLayoutSupplementaryItem(layoutSize: badgeSize, elementKind: "badge", containerAnchor: badgeAnchor)
+        
+        return badge
+    }
+    
+    private func createHeader(isPinned: Bool = false) -> NSCollectionLayoutBoundarySupplementaryItem {
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(44))
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,
+                                                                 elementKind: "header",
+                                                                 alignment: .top)
+        
+        header.pinToVisibleBounds = isPinned
+        header.zIndex = 2
+        return header
+    }
+    
+    private func createFooter(isPinned: Bool = false) -> NSCollectionLayoutBoundarySupplementaryItem {
+        
+        let footerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+        heightDimension: .absolute(44))
+        let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerSize,
+                                                                 elementKind: "footer",
+                                                                 alignment: .bottom)
+        
+        footer.pinToVisibleBounds = isPinned
+        footer.zIndex = 2
+        return footer
+    }
+    
+    private func addDecorationItem(to layout: UICollectionViewCompositionalLayout, section: NSCollectionLayoutSection) {
+        
+        let decorationItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
+        decorationItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+        section.decorationItems = [decorationItem]
+        
+        layout.register(SectionBackgroundDecorationView.self, forDecorationViewOfKind: "background")
     }
 }

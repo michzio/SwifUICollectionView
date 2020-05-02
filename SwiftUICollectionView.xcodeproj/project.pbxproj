@@ -21,6 +21,11 @@
 		8454D24E245C3CC800A685DE /* HostingControllerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D24D245C3CC800A685DE /* HostingControllerCollectionViewCell.swift */; };
 		8454D251245C71C600A685DE /* CollectionView+Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D250245C71C600A685DE /* CollectionView+Coordinator.swift */; };
 		8454D253245C733F00A685DE /* CollectionView+Layouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D252245C733F00A685DE /* CollectionView+Layouts.swift */; };
+		8454D257245DA57000A685DE /* BadgeSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D256245DA57000A685DE /* BadgeSupplementaryView.swift */; };
+		8454D259245DA5B900A685DE /* UICollectionReusableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D258245DA5B900A685DE /* UICollectionReusableView+Extensions.swift */; };
+		8454D25B245DAB6200A685DE /* EmptySupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D25A245DAB6200A685DE /* EmptySupplementaryView.swift */; };
+		8454D25D245DAFA900A685DE /* HostingControllerCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D25C245DAFA900A685DE /* HostingControllerCollectionReusableView.swift */; };
+		8454D25F245DBA4600A685DE /* SectionBackgroundDecorationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D25E245DBA4600A685DE /* SectionBackgroundDecorationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +45,11 @@
 		8454D24D245C3CC800A685DE /* HostingControllerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingControllerCollectionViewCell.swift; sourceTree = "<group>"; };
 		8454D250245C71C600A685DE /* CollectionView+Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+Coordinator.swift"; sourceTree = "<group>"; };
 		8454D252245C733F00A685DE /* CollectionView+Layouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+Layouts.swift"; sourceTree = "<group>"; };
+		8454D256245DA57000A685DE /* BadgeSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeSupplementaryView.swift; sourceTree = "<group>"; };
+		8454D258245DA5B900A685DE /* UICollectionReusableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+Extensions.swift"; sourceTree = "<group>"; };
+		8454D25A245DAB6200A685DE /* EmptySupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySupplementaryView.swift; sourceTree = "<group>"; };
+		8454D25C245DAFA900A685DE /* HostingControllerCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingControllerCollectionReusableView.swift; sourceTree = "<group>"; };
+		8454D25E245DBA4600A685DE /* SectionBackgroundDecorationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionBackgroundDecorationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +129,11 @@
 				8454D24D245C3CC800A685DE /* HostingControllerCollectionViewCell.swift */,
 				8454D24B245C27F500A685DE /* UICollectionViewCell+Extensions.swift */,
 				8454D252245C733F00A685DE /* CollectionView+Layouts.swift */,
+				8454D256245DA57000A685DE /* BadgeSupplementaryView.swift */,
+				8454D258245DA5B900A685DE /* UICollectionReusableView+Extensions.swift */,
+				8454D25A245DAB6200A685DE /* EmptySupplementaryView.swift */,
+				8454D25C245DAFA900A685DE /* HostingControllerCollectionReusableView.swift */,
+				8454D25E245DBA4600A685DE /* SectionBackgroundDecorationView.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -202,8 +217,13 @@
 				8454D253245C733F00A685DE /* CollectionView+Layouts.swift in Sources */,
 				8454D248245C263400A685DE /* Model.swift in Sources */,
 				8454D24A245C264500A685DE /* ItemCell.swift in Sources */,
+				8454D25F245DBA4600A685DE /* SectionBackgroundDecorationView.swift in Sources */,
+				8454D25B245DAB6200A685DE /* EmptySupplementaryView.swift in Sources */,
+				8454D259245DA5B900A685DE /* UICollectionReusableView+Extensions.swift in Sources */,
 				8454D232245C202E00A685DE /* ContentView.swift in Sources */,
 				8454D251245C71C600A685DE /* CollectionView+Coordinator.swift in Sources */,
+				8454D257245DA57000A685DE /* BadgeSupplementaryView.swift in Sources */,
+				8454D25D245DAFA900A685DE /* HostingControllerCollectionReusableView.swift in Sources */,
 				8454D246245C21C800A685DE /* CollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
