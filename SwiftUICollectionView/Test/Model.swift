@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Section: String, CaseIterable {
+enum Section: String, CaseIterable, Hashable {
     case feature
     case categories
 }
@@ -32,13 +32,12 @@ class Item: Hashable {
 }
 
 extension Item {
-    
     static let featureItems: [Item] = {
-        (0..<1_0/*00_000*/).map { Item(title: "Feature Item \($0)")}
+        (0..<10_000).map { Item(title: "Feature Item \($0)")}
     }()
 
     static let categoryItems: [Item] = {
-        (0..<1_0/*00_000*/).map { Item(title: "Category Item \($0)")}
+        (10_000..<20_000).map { Item(title: "Category Item \($0)")}
     }()
 }
 

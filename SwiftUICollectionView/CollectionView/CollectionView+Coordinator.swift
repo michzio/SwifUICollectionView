@@ -10,17 +10,12 @@ import SwiftUI
 
 extension CollectionView {
     
-    class Coordinator: NSObject, CollectionViewControllerDelegate {
+    class Coordinator: NSObject {
         
         let parent: CollectionView
         
         init(_ parent: CollectionView) {
             self.parent = parent
-        }
-        
-        func collectionView(_ collectionView: UICollectionView, didSelectItem item: Item, at indexPath: IndexPath) {
-            print("Did select item at \(indexPath)")
-            
         }
     }
 }

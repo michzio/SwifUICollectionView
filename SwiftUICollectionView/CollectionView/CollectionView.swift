@@ -10,25 +10,27 @@ import SwiftUI
 import UIKit
 
 struct CollectionView: UIViewControllerRepresentable {
-    
+
     // MARK: - Properties
-    let layout: UICollectionViewLayout
-    let sections: [Section]
-    let items: [Section: [Item]]
-    let supplementaryKinds: [String]
-    let animateChanges: Bool?
+    private let layout: UICollectionViewLayout
+    private let sections: [Section]
+    private let items: [Section: [Item]]
+    private let supplementaryKinds: [String]
+    private let animateChanges: Bool?
     
     // MARK: - Actions
-    let content: (_ indexPath: IndexPath, _ item: Item) -> AnyView
-    let supplementaryContent: ((_ kind: String, _ indexPath: IndexPath, _ item: Item?) -> AnyView)?
+    private let content: (_ indexPath: IndexPath, _ item: Item) -> AnyView
+    private let supplementaryContent: ((_ kind: String, _ indexPath: IndexPath, _ item: Item?) -> AnyView)?
    
-    init(layout: UICollectionViewLayout,
-         sections: [Section],
-         items: [Section: [Item]],
-         supplementaryKinds: [String] = [],
-         animateChanges: Bool? = nil,
-         supplementaryContent: ((_ kind: String, _ IndexPath: IndexPath, _ item: Item?) -> AnyView)? = nil,
-         @ViewBuilder content:  @escaping (_ indexPath: IndexPath, _ item: Item) -> AnyView) {
+    init(
+        layout: UICollectionViewLayout,
+        sections: [Section],
+        items: [Section: [Item]],
+        supplementaryKinds: [String] = [],
+        animateChanges: Bool? = nil,
+        supplementaryContent: ((_ kind: String, _ IndexPath: IndexPath, _ item: Item?) -> AnyView)? = nil,
+        @ViewBuilder content:  @escaping (_ indexPath: IndexPath, _ item: Item) -> AnyView
+    ) {
         self.layout = layout
         
         self.sections = sections
@@ -41,52 +43,48 @@ struct CollectionView: UIViewControllerRepresentable {
         
         self.content = content
     }
+
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
     
-    func makeUIViewController(context: Context) -> CollectionViewController {
+    func makeUIViewController(context: Context) -> CollectionViewController<Section, Item> {
         
-        let controller = CollectionViewController()
+        let controller = CollectionViewController<Section, Item>()
         controller.layout = layout
         controller.content = content
-        controller.supplementaryKinds = supplementaryKinds
         controller.supplementaryContent = supplementaryContent
+        controller.supplementaryKinds = supplementaryKinds
         
         controller.snapshot = snapshotForCurrentState()
-        
-        controller.delegate = context.coordinator
+
+        controller.onSelectItem = { _, _, _ in /* TODO: */ }
         
         return controller
     }
     
-    func updateUIViewController(_ controller: CollectionViewController, context: Context) {
-       
-        print("updating controller...")
-        let animating = self.animateChanges ?? smallItemsCount()
+    func updateUIViewController(_ controller: CollectionViewController<Section, Item>, context: Context) {
+
+        let animating = animateChanges ?? smallItemsCount()
         
-        controller.snapshot = self.snapshotForCurrentState()
+        controller.snapshot = snapshotForCurrentState()
         controller.reloadDataSource(animating: animating)
     }
     
-    func smallItemsCount() -> Bool {
+    private func smallItemsCount() -> Bool {
         items.reduce(0) { (res, items) in
             res + items.1.count
         } < 1000
     }
-    
-    func makeCoordinator() -> Coordinator {
-        Coordinator(self)
-    }
 }
 
 extension CollectionView {
-    
     private func snapshotForCurrentState() -> NSDiffableDataSourceSnapshot<Section, Item> {
-        
         var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
         snapshot.appendSections(sections)
         for section in sections {
             snapshot.appendItems(items[section]!, toSection: section)
         }
-        
         return snapshot
     }
 }

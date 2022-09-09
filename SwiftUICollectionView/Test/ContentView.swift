@@ -15,36 +15,41 @@ struct ContentView: View {
     var body: some View {
        
         ZStack {
-            CollectionView(layout: createLayout(),
-                           sections: self.sections,
-                           items: [
-                            .feature : Item.featureItems,
-                            .categories : Item.categoryItems
-                            ],
-                           supplementaryKinds: ["header", "footer"],
-                           supplementaryContent: { kind, indexPath, item in
-                        
-                            switch kind {
-                            case "header":
-                                return AnyView(Text("Header").font(.system(size: indexPath.section == 0 ? 30 : 16)))
-                            case "footer":
-                                return AnyView(Text("Footer"))
-                            default:
-                                return AnyView(EmptyView())
-                            }
-            },
+            CollectionView(
+                layout: createLayout(),
+                sections: sections,
+                items: [
+                    .feature : Item.featureItems,
+                    .categories : Item.categoryItems
+                ],
+                supplementaryKinds: [UICollectionView.elementKindSectionHeader, UICollectionView.elementKindSectionFooter],
+                supplementaryContent: { kind, indexPath, item in
+                    switch kind {
+                    case UICollectionView.elementKindSectionHeader:
+                        return AnyView(Text("Header").font(.system(size: indexPath.section == 0 ? 30 : 16)))
+                    case UICollectionView.elementKindSectionFooter:
+                        return AnyView(Text("Footer"))
+                    default:
+                        return AnyView(EmptyView())
+                    }
+                },
             content: { indexPath, item in
-                
-                            AnyView(Text("\(self.sections.first!.rawValue) (\(indexPath.section), \(indexPath.row))"))
+                let section = sections[indexPath.section]
+                return AnyView(
+                    Text("\(section.rawValue) (\(indexPath.section), \(indexPath.row))")
+                        .padding(16)
+                        .foregroundColor(Color.white)
+                        .background(section == .feature ? Color.green : Color.red)
+                )
             })
             
             VStack {
                 Spacer()
                 Button(action: {
-                    if self.sections.first == .categories {
-                        self.sections = [.feature, .categories]
+                    if sections.first == .categories {
+                        sections = [.feature, .categories]
                     } else {
-                        self.sections = [.categories, .feature]
+                        sections = [.categories, .feature]
                     }
                 }) {
                     Text("Change!")
@@ -68,8 +73,8 @@ struct ContentView: View {
     }
     
     private func createTwoSectionLayout() -> UICollectionViewLayout {
-        let section1 = self.createHorizontalSection()
-        let section2 = self.createTwoColumnSection(hasBadges: true)
+        let section1 = createHorizontalSection()
+        let section2 = createTwoColumnSection(hasBadges: true)
         
         let layout = UICollectionViewCompositionalLayout { (sectionIndex, environment) in
             
@@ -103,7 +108,7 @@ struct ContentView: View {
         section.orthogonalScrollingBehavior = .paging
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         
-         section.boundarySupplementaryItems = [createHeader(isPinned: true), createFooter(isPinned: true)]
+        section.boundarySupplementaryItems = [createHeader(isPinned: true), createFooter(isPinned: true)]
         
         return section
     }
@@ -138,9 +143,7 @@ struct ContentView: View {
     
     private func createHeader(isPinned: Bool = false) -> NSCollectionLayoutBoundarySupplementaryItem {
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(44))
-        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,
-                                                                 elementKind: "header",
-                                                                 alignment: .top)
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
         
         header.pinToVisibleBounds = isPinned
         header.zIndex = 2
@@ -151,9 +154,7 @@ struct ContentView: View {
         
         let footerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
         heightDimension: .absolute(44))
-        let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerSize,
-                                                                 elementKind: "footer",
-                                                                 alignment: .bottom)
+        let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerSize, elementKind: UICollectionView.elementKindSectionFooter, alignment: .bottom)
         
         footer.pinToVisibleBounds = isPinned
         footer.zIndex = 2
