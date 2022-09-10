@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "SwiftUICollectionView"
-  s.version = "0.0.6"
+  s.version = "0.0.7"
   s.summary = "SwiftUI representable of UIKit CollectionView that supports compositional layout."
 
   s.swift_version = '5.6'
@@ -20,7 +20,11 @@ Pod::Spec.new do |s|
   s.source = { :git => "https://github.com/michzio/SwifUICollectionView.git", :tag => "#{s.version}" }
 
   s.source_files = "SwiftUICollectionView/**/*.swift"
-  s.exclude_files = "Example/**/*.swift", "SwiftUICollectionView/SwiftUICollectionViewTests/**/*.swift"
+  s.exclude_files = [
+    "Example/**/*.swift", 
+    "SwiftUICollectionView/SwiftUICollectionViewTests/**/*.swift", 
+    "SwiftUICollectionView/SwiftUICollectionView/Package.swift"
+  ]
 
   s.framework = "UIKit"
   
