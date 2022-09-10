@@ -20,9 +20,13 @@ profile
 # Thumbnails
 ._*
 
+Example/.DS_Store
+SwiftUICollectionView/.DS_Store
+
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
 
 # Cocoapods
-Example/Pods
+Example/Pods/
+
