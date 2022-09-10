@@ -9,7 +9,7 @@
 import UIKit
 import SwiftUI
 
-class CollectionViewController<Section, Item>: UIViewController, UICollectionViewDelegate where Section: Hashable, Item: Hashable {
+public class CollectionViewController<Section, Item>: UIViewController, UICollectionViewDelegate where Section: Hashable, Item: Hashable {
 
     // MARK: - Injections
     var layout: UICollectionViewLayout!
@@ -33,7 +33,7 @@ class CollectionViewController<Section, Item>: UIViewController, UICollectionVie
     }()
 
     // MARK: - Life Cycle
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
 
         configureCollectionView()
@@ -43,7 +43,7 @@ class CollectionViewController<Section, Item>: UIViewController, UICollectionVie
     }
 
     // MARK: - UICollectionViewDelegate
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
 
@@ -91,9 +91,7 @@ extension CollectionViewController {
 }
 
 // MARK: - Item Providers
-
 extension CollectionViewController {
-
     private func cellProvider(collectionView: UICollectionView, indexPath: IndexPath, item: Item) -> UICollectionViewCell? {
         contentCellProvider(collectionView, indexPath, item)
     }

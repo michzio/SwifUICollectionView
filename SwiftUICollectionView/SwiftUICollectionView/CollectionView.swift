@@ -9,7 +9,7 @@
 import SwiftUI
 import UIKit
 
-struct CollectionView<Section: Hashable, Item: Hashable>: UIViewControllerRepresentable {
+public struct CollectionView<Section: Hashable, Item: Hashable>: UIViewControllerRepresentable {
 
     // MARK: - Properties
     private let layout: UICollectionViewLayout
@@ -26,7 +26,7 @@ struct CollectionView<Section: Hashable, Item: Hashable>: UIViewControllerRepres
     private let snapshotProvider:(() -> NSDiffableDataSourceSnapshot<Section, Item>)?
     private let selectionAction: ((_ collectionView: UICollectionView, _ item: Item, _ indexPath: IndexPath) -> Void)?
    
-    init(
+    public init(
         layout: UICollectionViewLayout,
         sections: [Section],
         items: [Section: [Item]],
@@ -53,11 +53,11 @@ struct CollectionView<Section: Hashable, Item: Hashable>: UIViewControllerRepres
         self.content = content
     }
 
-    func makeCoordinator() -> Coordinator {
+    public func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
     
-    func makeUIViewController(context: Context) -> CollectionViewController<Section, Item> {
+    public func makeUIViewController(context: Context) -> CollectionViewController<Section, Item> {
         
         let controller = CollectionViewController<Section, Item>()
         controller.layout = layout
@@ -75,7 +75,7 @@ struct CollectionView<Section: Hashable, Item: Hashable>: UIViewControllerRepres
         return controller
     }
     
-    func updateUIViewController(_ controller: CollectionViewController<Section, Item>, context: Context) {
+    public func updateUIViewController(_ controller: CollectionViewController<Section, Item>, context: Context) {
 
         let animating = animateChanges ?? smallItemsCount()
         
