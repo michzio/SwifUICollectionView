@@ -28,6 +28,6 @@ SwiftUICollectionView/.DS_Store
 .Trashes
 
 # Cocoapods
-Example/Pods/
-SwiftUICollectionView/build/
+Example/Pods/*
+SwiftUICollectionView/build/*
 
