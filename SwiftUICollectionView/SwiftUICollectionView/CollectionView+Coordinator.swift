@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-extension CollectionView {
+public extension CollectionView {
     
     class Coordinator: NSObject {
         
