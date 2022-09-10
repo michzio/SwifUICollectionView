@@ -1,0 +1,14 @@
+{
+  'version': 0,
+  'use-external-names': 'false',
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': "/Users/michzio/Click5Interactive/Reusable Parts/SwiftUICollectionView/SwiftUICollectionView/build/Release-iphoneos/SwiftUICollectionView.framework/Modules"
+    'contents': [{
+      'type': 'file',
+      'name': "module.modulemap",
+      'external-contents': "/Users/michzio/Click5Interactive/Reusable Parts/SwiftUICollectionView/SwiftUICollectionView/build/SwiftUICollectionView.build/Release-iphoneos/SwiftUICollectionView.build/unextended-module.modulemap",
+    }]
+  }]
+}

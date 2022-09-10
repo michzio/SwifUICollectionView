@@ -1,0 +1,10 @@
+framework module SwiftUICollectionView {
+  umbrella header "SwiftUICollectionView.h"
+
+  export *
+  module * { export * }
+}
+
+module SwiftUICollectionView.__Swift {
+  exclude header "SwiftUICollectionView-Swift.h"
+}

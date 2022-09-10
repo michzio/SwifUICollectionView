@@ -1,0 +1,27 @@
+version: "Apple Swift version 5.7 (swiftlang-5.7.0.123.8 clang-1400.0.29.50)"
+options: "ed5e37ecb015d563e1bced286ccd23d3277865749799e792f0c8170a0688ac82"
+build_start_time: [1662835575, 929059982]
+build_end_time: [1662835583, 775587081]
+inputs:
+  ? "/Users/michzio/Click5Interactive/Reusable Parts/SwiftUICollectionView/SwiftUICollectionView/SwiftUICollectionView/CollectionView+Coordinator.swift"
+  : [1662809262, 890435695]
+  ? "/Users/michzio/Click5Interactive/Reusable Parts/SwiftUICollectionView/SwiftUICollectionView/SwiftUICollectionView/CollectionView.swift"
+  : [1662809262, 892640352]
+  ? "/Users/michzio/Click5Interactive/Reusable Parts/SwiftUICollectionView/SwiftUICollectionView/SwiftUICollectionView/UIKit/Cells/HostingControllerCollectionViewCell.swift"
+  : [1662800590, 366178035]
+  ? "/Users/michzio/Click5Interactive/Reusable Parts/SwiftUICollectionView/SwiftUICollectionView/SwiftUICollectionView/UIKit/Cells/ItemCell.swift"
+  : [1662800590, 390186786]
+  ? "/Users/michzio/Click5Interactive/Reusable Parts/SwiftUICollectionView/SwiftUICollectionView/SwiftUICollectionView/UIKit/CollectionView+Layouts.swift"
+  : [1662800590, 327665805]
+  ? "/Users/michzio/Click5Interactive/Reusable Parts/SwiftUICollectionView/SwiftUICollectionView/SwiftUICollectionView/UIKit/CollectionViewController.swift"
+  : [1662821708, 227779865]
+  ? "/Users/michzio/Click5Interactive/Reusable Parts/SwiftUICollectionView/SwiftUICollectionView/SwiftUICollectionView/UIKit/DecorationView/SectionBackgroundDecorationView.swift"
+  : [1662809262, 896590232]
+  ? "/Users/michzio/Click5Interactive/Reusable Parts/SwiftUICollectionView/SwiftUICollectionView/SwiftUICollectionView/UIKit/Extensions/UICollectionReusableView.swift"
+  : [1662800590, 383724927]
+  ? "/Users/michzio/Click5Interactive/Reusable Parts/SwiftUICollectionView/SwiftUICollectionView/SwiftUICollectionView/UIKit/SupplementaryViews/BadgeSupplementaryView.swift"
+  : [1662809262, 898822784]
+  ? "/Users/michzio/Click5Interactive/Reusable Parts/SwiftUICollectionView/SwiftUICollectionView/SwiftUICollectionView/UIKit/SupplementaryViews/EmptySupplementaryView.swift"
+  : [1662799130, 782172679]
+  ? "/Users/michzio/Click5Interactive/Reusable Parts/SwiftUICollectionView/SwiftUICollectionView/SwiftUICollectionView/UIKit/SupplementaryViews/HostingControllerCollectionReusableView.swift"
+  : [1662800590, 404314994]
