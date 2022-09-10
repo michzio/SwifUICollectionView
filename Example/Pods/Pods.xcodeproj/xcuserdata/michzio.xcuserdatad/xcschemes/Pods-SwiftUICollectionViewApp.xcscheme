@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6F2CEB20BB6E62AD7EDEEA2AB5FF7430"
-               BuildableName = "Pods_SwiftUICollectionView.framework"
-               BlueprintName = "Pods-SwiftUICollectionView"
+               BlueprintIdentifier = "A508B741D1CFF9E429839201AA4CCEB1"
+               BuildableName = "Pods_SwiftUICollectionViewApp.framework"
+               BlueprintName = "Pods-SwiftUICollectionViewApp"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
