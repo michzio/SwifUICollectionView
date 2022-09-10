@@ -1,0 +1,16 @@
+PODS:
+  - SwiftUICollectionView (0.0.1)
+
+DEPENDENCIES:
+  - SwiftUICollectionView (from `../SwiftUICollectionView`)
+
+EXTERNAL SOURCES:
+  SwiftUICollectionView:
+    :path: "../SwiftUICollectionView"
+
+SPEC CHECKSUMS:
+  SwiftUICollectionView: 5fbc745ef35be1489dcec32ed51d70f7bc7f4eca
+
+PODFILE CHECKSUM: cb381620ed8867ce366529481afac454146d9a09
+
+COCOAPODS: 1.10.1

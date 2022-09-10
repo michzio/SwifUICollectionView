@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol HasBadgeCount {
+public protocol HasBadgeCount {
     var badgeCount: Int? { get }
 }
 

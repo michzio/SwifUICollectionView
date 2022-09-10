@@ -51,6 +51,7 @@
 		844DA6A028CC8E2400DE5BC2 /* CollectionView+Layouts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionView+Layouts.swift"; sourceTree = "<group>"; };
 		844DA6A128CC8E2400DE5BC2 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		844DA6A228CC8E2400DE5BC2 /* CollectionView+Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionView+Coordinator.swift"; sourceTree = "<group>"; };
+		844DA6AE28CC9A4000DE5BC2 /* SwiftUICollectionView.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SwiftUICollectionView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +76,7 @@
 		844DA66E28CC8D7B00DE5BC2 = {
 			isa = PBXGroup;
 			children = (
+				844DA6AE28CC9A4000DE5BC2 /* SwiftUICollectionView.podspec */,
 				844DA67A28CC8D7B00DE5BC2 /* SwiftUICollectionView */,
 				844DA68628CC8D7E00DE5BC2 /* SwiftUICollectionViewTests */,
 				844DA67928CC8D7B00DE5BC2 /* Products */,
@@ -433,6 +435,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -460,6 +463,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -482,6 +486,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.elector.SwiftUICollectionViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -498,6 +503,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.elector.SwiftUICollectionViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

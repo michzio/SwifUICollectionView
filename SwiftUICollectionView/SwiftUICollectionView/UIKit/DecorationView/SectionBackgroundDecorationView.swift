@@ -8,9 +8,9 @@
 
 import UIKit
 
-class SectionBackgroundDecorationView: UICollectionReusableView {
+public class SectionBackgroundDecorationView: UICollectionReusableView {
 
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         configure()
     }
