@@ -25,12 +25,12 @@ let package = Package(
         .target(
             name: "SwiftUICollectionView",
             dependencies: [],
-            path: "SwiftUICollectionView"
+            path: "SwiftUICollectionView/SwiftUICollectionView"
         ),
         .testTarget(
             name: "SwiftUICollectionViewTests",
             dependencies: ["SwiftUICollectionView"],
-            path: "SwiftUICollectionViewTests"
+            path: "SwiftUICollectionView/SwiftUICollectionViewTests"
         )
     ]
 )
