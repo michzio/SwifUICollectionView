@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "SwiftUICollectionView"
-  s.version = "0.0.4"
+  s.version = "0.0.5"
   s.summary = "SwiftUI representable of UIKit CollectionView that supports compositional layout."
 
   s.swift_version = '5.6'

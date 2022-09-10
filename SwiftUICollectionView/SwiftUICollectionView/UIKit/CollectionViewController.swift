@@ -63,7 +63,11 @@ extension CollectionViewController {
     }
 
     private func registerCells() {
-        collectionView.register(HostingControllerCollectionViewCell<AnyView>.self, forCellWithReuseIdentifier: HostingControllerCollectionViewCell<AnyView>.reuseIdentifier)
+        if #available(iOS 16, *) {
+            collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: UICollectionViewCell.reuseIdentifier)
+        } else {
+            collectionView.register(HostingControllerCollectionViewCell<AnyView>.self, forCellWithReuseIdentifier: HostingControllerCollectionViewCell<AnyView>.reuseIdentifier)
+        }
     }
 
     private func registerSupplementaryViews() {
@@ -93,10 +97,24 @@ extension CollectionViewController {
 // MARK: - Item Providers
 extension CollectionViewController {
     private func cellProvider(collectionView: UICollectionView, indexPath: IndexPath, item: Item) -> UICollectionViewCell? {
-        contentCellProvider(collectionView, indexPath, item)
+        if #available(iOS 16, *) {
+            return contentCellProvider(collectionView, indexPath, item)
+        } else {
+            return fallbackContentCellProvider(collectionView, indexPath, item)
+        }
     }
 
+    @available(iOS 16, *)
     private func contentCellProvider(_ collectionView: UICollectionView, _ indexPath: IndexPath, _ item: Item) -> UICollectionViewCell? {
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UICollectionViewCell.reuseIdentifier, for: indexPath)
+        cell.contentConfiguration = UIHostingConfiguration { [weak self] in
+            self?.content(indexPath, item)
+        }
+        return cell
+    }
+
+    private func fallbackContentCellProvider(_ collectionView: UICollectionView, _ indexPath: IndexPath, _ item: Item) -> UICollectionViewCell? {
 
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HostingControllerCollectionViewCell<AnyView>.reuseIdentifier, for: indexPath) as? HostingControllerCollectionViewCell<AnyView> else {
             fatalError("Could not load cell")
