@@ -29,4 +29,5 @@ SwiftUICollectionView/.DS_Store
 
 # Cocoapods
 Example/Pods/
+SwiftUICollectionView/build/
 

@@ -97,14 +97,14 @@ extension CollectionViewController {
 // MARK: - Item Providers
 extension CollectionViewController {
     private func cellProvider(collectionView: UICollectionView, indexPath: IndexPath, item: Item) -> UICollectionViewCell? {
-        if #available(iOS 16, *) {
+        if #available(iOS 16.0, *) {
             return contentCellProvider(collectionView, indexPath, item)
         } else {
             return fallbackContentCellProvider(collectionView, indexPath, item)
         }
     }
 
-    @available(iOS 16, *)
+    @available(iOS 16.0, *)
     private func contentCellProvider(_ collectionView: UICollectionView, _ indexPath: IndexPath, _ item: Item) -> UICollectionViewCell? {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UICollectionViewCell.reuseIdentifier, for: indexPath)
