@@ -13,18 +13,7 @@
 		8454D234245C202F00A685DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8454D233245C202F00A685DE /* Assets.xcassets */; };
 		8454D237245C202F00A685DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8454D236245C202F00A685DE /* Preview Assets.xcassets */; };
 		8454D23A245C202F00A685DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454D238245C202F00A685DE /* LaunchScreen.storyboard */; };
-		8454D242245C206200A685DE /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D241245C206200A685DE /* CollectionView.swift */; };
-		8454D246245C21C800A685DE /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D245245C21C800A685DE /* CollectionViewController.swift */; };
 		8454D248245C263400A685DE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D247245C263400A685DE /* Model.swift */; };
-		8454D24A245C264500A685DE /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D249245C264500A685DE /* ItemCell.swift */; };
-		8454D24E245C3CC800A685DE /* HostingControllerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D24D245C3CC800A685DE /* HostingControllerCollectionViewCell.swift */; };
-		8454D251245C71C600A685DE /* CollectionView+Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D250245C71C600A685DE /* CollectionView+Coordinator.swift */; };
-		8454D253245C733F00A685DE /* CollectionView+Layouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D252245C733F00A685DE /* CollectionView+Layouts.swift */; };
-		8454D257245DA57000A685DE /* BadgeSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D256245DA57000A685DE /* BadgeSupplementaryView.swift */; };
-		8454D259245DA5B900A685DE /* UICollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D258245DA5B900A685DE /* UICollectionReusableView.swift */; };
-		8454D25B245DAB6200A685DE /* EmptySupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D25A245DAB6200A685DE /* EmptySupplementaryView.swift */; };
-		8454D25D245DAFA900A685DE /* HostingControllerCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D25C245DAFA900A685DE /* HostingControllerCollectionReusableView.swift */; };
-		8454D25F245DBA4600A685DE /* SectionBackgroundDecorationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D25E245DBA4600A685DE /* SectionBackgroundDecorationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,18 +25,7 @@
 		8454D236245C202F00A685DE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8454D239245C202F00A685DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8454D23B245C202F00A685DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8454D241245C206200A685DE /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
-		8454D245245C21C800A685DE /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		8454D247245C263400A685DE /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		8454D249245C264500A685DE /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
-		8454D24D245C3CC800A685DE /* HostingControllerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingControllerCollectionViewCell.swift; sourceTree = "<group>"; };
-		8454D250245C71C600A685DE /* CollectionView+Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+Coordinator.swift"; sourceTree = "<group>"; };
-		8454D252245C733F00A685DE /* CollectionView+Layouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+Layouts.swift"; sourceTree = "<group>"; };
-		8454D256245DA57000A685DE /* BadgeSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeSupplementaryView.swift; sourceTree = "<group>"; };
-		8454D258245DA5B900A685DE /* UICollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionReusableView.swift; sourceTree = "<group>"; };
-		8454D25A245DAB6200A685DE /* EmptySupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySupplementaryView.swift; sourceTree = "<group>"; };
-		8454D25C245DAFA900A685DE /* HostingControllerCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingControllerCollectionReusableView.swift; sourceTree = "<group>"; };
-		8454D25E245DBA4600A685DE /* SectionBackgroundDecorationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionBackgroundDecorationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,41 +39,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		844DA66928CC84B100DE5BC2 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				8454D258245DA5B900A685DE /* UICollectionReusableView.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		844DA66A28CC84C800DE5BC2 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				8454D249245C264500A685DE /* ItemCell.swift */,
-				8454D24D245C3CC800A685DE /* HostingControllerCollectionViewCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		844DA66B28CC850D00DE5BC2 /* SupplementaryViews */ = {
-			isa = PBXGroup;
-			children = (
-				8454D25C245DAFA900A685DE /* HostingControllerCollectionReusableView.swift */,
-				8454D256245DA57000A685DE /* BadgeSupplementaryView.swift */,
-				8454D25A245DAB6200A685DE /* EmptySupplementaryView.swift */,
-			);
-			path = SupplementaryViews;
-			sourceTree = "<group>";
-		};
-		844DA66D28CC854800DE5BC2 /* DecorationView */ = {
-			isa = PBXGroup;
-			children = (
-				8454D25E245DBA4600A685DE /* SectionBackgroundDecorationView.swift */,
-			);
-			path = DecorationView;
-			sourceTree = "<group>";
-		};
 		8454D221245C202E00A685DE = {
 			isa = PBXGroup;
 			children = (
@@ -119,7 +62,6 @@
 				8454D247245C263400A685DE /* Model.swift */,
 				8454D23B245C202F00A685DE /* Info.plist */,
 				8454D244245C206D00A685DE /* Supporting Files */,
-				8454D243245C206600A685DE /* CollectionView */,
 				8454D235245C202F00A685DE /* Preview Content */,
 			);
 			path = SwiftUICollectionView;
@@ -133,16 +75,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		8454D243245C206600A685DE /* CollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				8454D24F245C71A500A685DE /* UIKit */,
-				8454D241245C206200A685DE /* CollectionView.swift */,
-				8454D250245C71C600A685DE /* CollectionView+Coordinator.swift */,
-			);
-			path = CollectionView;
-			sourceTree = "<group>";
-		};
 		8454D244245C206D00A685DE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,19 +84,6 @@
 				8454D238245C202F00A685DE /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		8454D24F245C71A500A685DE /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				844DA66D28CC854800DE5BC2 /* DecorationView */,
-				844DA66B28CC850D00DE5BC2 /* SupplementaryViews */,
-				844DA66A28CC84C800DE5BC2 /* Cells */,
-				844DA66928CC84B100DE5BC2 /* Extensions */,
-				8454D245245C21C800A685DE /* CollectionViewController.swift */,
-				8454D252245C733F00A685DE /* CollectionView+Layouts.swift */,
-			);
-			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,21 +157,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8454D24E245C3CC800A685DE /* HostingControllerCollectionViewCell.swift in Sources */,
 				8454D22E245C202E00A685DE /* AppDelegate.swift in Sources */,
 				8454D230245C202E00A685DE /* SceneDelegate.swift in Sources */,
-				8454D242245C206200A685DE /* CollectionView.swift in Sources */,
-				8454D253245C733F00A685DE /* CollectionView+Layouts.swift in Sources */,
 				8454D248245C263400A685DE /* Model.swift in Sources */,
-				8454D24A245C264500A685DE /* ItemCell.swift in Sources */,
-				8454D25F245DBA4600A685DE /* SectionBackgroundDecorationView.swift in Sources */,
-				8454D25B245DAB6200A685DE /* EmptySupplementaryView.swift in Sources */,
-				8454D259245DA5B900A685DE /* UICollectionReusableView.swift in Sources */,
 				8454D232245C202E00A685DE /* ContentView.swift in Sources */,
-				8454D251245C71C600A685DE /* CollectionView+Coordinator.swift in Sources */,
-				8454D257245DA57000A685DE /* BadgeSupplementaryView.swift in Sources */,
-				8454D25D245DAFA900A685DE /* HostingControllerCollectionReusableView.swift in Sources */,
-				8454D246245C21C800A685DE /* CollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
