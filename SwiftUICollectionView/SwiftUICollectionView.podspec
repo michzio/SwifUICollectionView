@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.source = { :git => "https://github.com/michzio/SwifUICollectionView.git", :tag => "#{s.version}" }
 
   s.source_files = "SwiftUICollectionView/**/*.swift"
-  s.exclude_files = "Example/**/*.swift"
+  s.exclude_files = "Example/**/*.swift", "SwiftUICollectionView/SwiftUICollectionViewTests/**/*.swift"
 
   s.framework = "UIKit"
   

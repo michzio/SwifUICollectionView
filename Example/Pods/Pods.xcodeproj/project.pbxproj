@@ -17,18 +17,18 @@
 		680E31EFE58C29354DBF0491AFAE8506 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23691DFCD1DE7A3E0C07A5D2BB30A2E /* CollectionViewController.swift */; };
 		74BA02B054B41F25A3FE5E310845B25B /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA53B9E1600045B85CF2B9EDD7F02A45 /* ItemCell.swift */; };
 		77B6E1F990995A9D175154A9D67B30D9 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC60EA73F52EDE717509F57AFED78F1 /* CollectionView.swift */; };
+		8C6E05234534711E5E8DA4A9E829E457 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		8F04CB77A9D823D4363000404CEBFF09 /* Pods-SwiftUICollectionViewApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D82C317ECBB260DC3650D1C392C2946 /* Pods-SwiftUICollectionViewApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		942A6C859F01FF7880D1187B4363D905 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
 		A7C13DB05E494814E0B510068D76F1C6 /* SwiftUICollectionView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D3D3547257F5E6CC7DB4FC50A144B2 /* SwiftUICollectionView-dummy.m */; };
-		B99BAA86BBBAA8661A9F5EE242592C6D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		E089AF86A54BB4ADD09E95BA29DA9A11 /* Pods-SwiftUICollectionView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E0E383D12E4AA1F7615346462187A9 /* Pods-SwiftUICollectionView-dummy.m */; };
+		D3C47582463062AD7A444F265A6DD396 /* Pods-SwiftUICollectionViewApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 639929330CAC087BA16E24F350D76616 /* Pods-SwiftUICollectionViewApp-dummy.m */; };
 		EDEAC5A85126EBF03849CE7738DB8B9F /* CollectionView+Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED6AA36CDB93696CD71053C388D929B /* CollectionView+Coordinator.swift */; };
 		F841158E02AF7BF4395FF76C519B3775 /* SwiftUICollectionView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 232A839A57D0AC81C851475871E7432B /* SwiftUICollectionView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F86F343CA91FD9F1DF8CBA91B28E83A7 /* Pods-SwiftUICollectionView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AE5BDED1A291E395FC12AD24ABCBC853 /* Pods-SwiftUICollectionView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FFF4A728AB0C9D6BEB976C469BA2EF13 /* CollectionView+Layouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ED13A66BEA9CE8213D47665DA676D7 /* CollectionView+Layouts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B49CFB9CC88BF1486A5C76AEB5663BEC /* PBXContainerItemProxy */ = {
+		2B87EA5857C35B6E9828B2A0070A7D49 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -39,35 +39,35 @@
 
 /* Begin PBXFileReference section */
 		1288058A28B9379485ABDB2203FBE8DE /* HostingControllerCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HostingControllerCollectionViewCell.swift; sourceTree = "<group>"; };
-		15E0E383D12E4AA1F7615346462187A9 /* Pods-SwiftUICollectionView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftUICollectionView-dummy.m"; sourceTree = "<group>"; };
 		1B1AA0A09FB933124F168B378639A999 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		1D82C317ECBB260DC3650D1C392C2946 /* Pods-SwiftUICollectionViewApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftUICollectionViewApp-umbrella.h"; sourceTree = "<group>"; };
 		232A839A57D0AC81C851475871E7432B /* SwiftUICollectionView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftUICollectionView-umbrella.h"; sourceTree = "<group>"; };
 		26E06EF0744BFD62F59A957E65795D06 /* SwiftUICollectionView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftUICollectionView.framework; path = SwiftUICollectionView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2CF68772B2409C32482A91F1BC8835BE /* Pods-SwiftUICollectionView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftUICollectionView.debug.xcconfig"; sourceTree = "<group>"; };
 		33A5C3DE1112A3CFC2A5FB6CF769AFE2 /* SwiftUICollectionView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftUICollectionView.release.xcconfig; sourceTree = "<group>"; };
+		33C0544DEAC201D40FDD182BF1745E92 /* Pods-SwiftUICollectionViewApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftUICollectionViewApp.release.xcconfig"; sourceTree = "<group>"; };
 		37C6EC5A51B2CE571AFB2A74053B00BB /* SwiftUICollectionView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftUICollectionView.debug.xcconfig; sourceTree = "<group>"; };
+		3906764D1CC273F7D0EF4560BB0B6EA6 /* Pods_SwiftUICollectionViewApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftUICollectionViewApp.framework; path = "Pods-SwiftUICollectionViewApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C33A167AC4DCA64C363A396CB084032 /* UICollectionReusableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UICollectionReusableView.swift; sourceTree = "<group>"; };
-		407D427D20026D4B034C231D69CF3412 /* Pods-SwiftUICollectionView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftUICollectionView-Info.plist"; sourceTree = "<group>"; };
-		5024B2CF6516629A96AF13C9E4F61384 /* Pods_SwiftUICollectionView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftUICollectionView.framework; path = "Pods-SwiftUICollectionView.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		547F8F10B6F78AB7CED5FC1480444280 /* Pods-SwiftUICollectionView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftUICollectionView.release.xcconfig"; sourceTree = "<group>"; };
+		4076E13DB4B94560B9CFA9D668ED9D5F /* Pods-SwiftUICollectionViewApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftUICollectionViewApp-acknowledgements.plist"; sourceTree = "<group>"; };
 		54ED13A66BEA9CE8213D47665DA676D7 /* CollectionView+Layouts.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CollectionView+Layouts.swift"; sourceTree = "<group>"; };
 		5ED6AA36CDB93696CD71053C388D929B /* CollectionView+Coordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CollectionView+Coordinator.swift"; path = "SwiftUICollectionView/CollectionView+Coordinator.swift"; sourceTree = "<group>"; };
 		5F14BFEF7BE4202AEA53FC3D3AAB99B7 /* BadgeSupplementaryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BadgeSupplementaryView.swift; sourceTree = "<group>"; };
 		6039A37A1A64AC8EEACCB8F24C1C2791 /* SwiftUICollectionView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftUICollectionView.modulemap; sourceTree = "<group>"; };
-		76B82BB5A9E93DB6A513AF27ACAFFB7F /* Pods-SwiftUICollectionView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwiftUICollectionView.modulemap"; sourceTree = "<group>"; };
-		791C8DA24997796611959B5187DFE916 /* Pods-SwiftUICollectionView-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftUICollectionView-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7A1B131CD6432806EFF700415B29636C /* Pods-SwiftUICollectionView-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftUICollectionView-acknowledgements.plist"; sourceTree = "<group>"; };
-		954E8C6F954B39A90E928C34002E76D3 /* Pods-SwiftUICollectionView-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftUICollectionView-frameworks.sh"; sourceTree = "<group>"; };
+		639929330CAC087BA16E24F350D76616 /* Pods-SwiftUICollectionViewApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftUICollectionViewApp-dummy.m"; sourceTree = "<group>"; };
 		96D3D3547257F5E6CC7DB4FC50A144B2 /* SwiftUICollectionView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftUICollectionView-dummy.m"; sourceTree = "<group>"; };
+		97BBCCE5FE8426E0FE6D311551EB295D /* Pods-SwiftUICollectionViewApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwiftUICollectionViewApp.modulemap"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A23691DFCD1DE7A3E0C07A5D2BB30A2E /* CollectionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		A30A64BD31F486CCE73D6F37A314897D /* SectionBackgroundDecorationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SectionBackgroundDecorationView.swift; sourceTree = "<group>"; };
 		AA65239D8C7A9CC30B2E80EF19040989 /* SwiftUICollectionView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftUICollectionView-prefix.pch"; sourceTree = "<group>"; };
 		AB68EFD47586CFF9D607C46CB932F7F3 /* SwiftUICollectionView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftUICollectionView-Info.plist"; sourceTree = "<group>"; };
-		AE5BDED1A291E395FC12AD24ABCBC853 /* Pods-SwiftUICollectionView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftUICollectionView-umbrella.h"; sourceTree = "<group>"; };
 		AEC60EA73F52EDE717509F57AFED78F1 /* CollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CollectionView.swift; path = SwiftUICollectionView/CollectionView.swift; sourceTree = "<group>"; };
+		AEF20B0F132CF55BD5DE5EE0E237D0CE /* Pods-SwiftUICollectionViewApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftUICollectionViewApp-acknowledgements.markdown"; sourceTree = "<group>"; };
 		C131A6310BF5F3EAC72B623E35BDA697 /* EmptySupplementaryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EmptySupplementaryView.swift; sourceTree = "<group>"; };
+		CD208B93378003B4D15697A894BFB3FA /* Pods-SwiftUICollectionViewApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftUICollectionViewApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		D6AF148C48E64AD2A7F7C10F8F564D56 /* Pods-SwiftUICollectionViewApp-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftUICollectionViewApp-Info.plist"; sourceTree = "<group>"; };
+		DB45B9293B518C911C88981785603FF9 /* Pods-SwiftUICollectionViewApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftUICollectionViewApp-frameworks.sh"; sourceTree = "<group>"; };
 		EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		FA53B9E1600045B85CF2B9EDD7F02A45 /* ItemCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		FC09D7EA143AD00B2FC689E1819B1A9D /* HostingControllerCollectionReusableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HostingControllerCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -75,11 +75,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6E9557B8FF347AFE912069A7A0CC7ED7 /* Frameworks */ = {
+		3B099D5FC433CA4179669A52E0CB5606 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B99BAA86BBBAA8661A9F5EE242592C6D /* Foundation.framework in Frameworks */,
+				8C6E05234534711E5E8DA4A9E829E457 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,15 +95,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		02770928D2A4FCC051422C222C279DEC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5024B2CF6516629A96AF13C9E4F61384 /* Pods_SwiftUICollectionView.framework */,
-				26E06EF0744BFD62F59A957E65795D06 /* SwiftUICollectionView.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		0C32C568E6F3D225E0EE2C1F9FEE1311 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +121,15 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		5CD9AAE5C7C76BF6F5C838BE3CD2AAFD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3906764D1CC273F7D0EF4560BB0B6EA6 /* Pods_SwiftUICollectionViewApp.framework */,
+				26E06EF0744BFD62F59A957E65795D06 /* SwiftUICollectionView.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		60D2105F7F5AAD73F3D3516B50731CDA /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,23 +144,6 @@
 			path = SwiftUICollectionView/UIKit;
 			sourceTree = "<group>";
 		};
-		6E6CD60F3F27269320EE9BBF81238FE4 /* Pods-SwiftUICollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				76B82BB5A9E93DB6A513AF27ACAFFB7F /* Pods-SwiftUICollectionView.modulemap */,
-				791C8DA24997796611959B5187DFE916 /* Pods-SwiftUICollectionView-acknowledgements.markdown */,
-				7A1B131CD6432806EFF700415B29636C /* Pods-SwiftUICollectionView-acknowledgements.plist */,
-				15E0E383D12E4AA1F7615346462187A9 /* Pods-SwiftUICollectionView-dummy.m */,
-				954E8C6F954B39A90E928C34002E76D3 /* Pods-SwiftUICollectionView-frameworks.sh */,
-				407D427D20026D4B034C231D69CF3412 /* Pods-SwiftUICollectionView-Info.plist */,
-				AE5BDED1A291E395FC12AD24ABCBC853 /* Pods-SwiftUICollectionView-umbrella.h */,
-				2CF68772B2409C32482A91F1BC8835BE /* Pods-SwiftUICollectionView.debug.xcconfig */,
-				547F8F10B6F78AB7CED5FC1480444280 /* Pods-SwiftUICollectionView.release.xcconfig */,
-			);
-			name = "Pods-SwiftUICollectionView";
-			path = "Target Support Files/Pods-SwiftUICollectionView";
-			sourceTree = "<group>";
-		};
 		78AA9347ECAAB762211858365BDCE92A /* SwiftUICollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +155,14 @@
 			);
 			name = SwiftUICollectionView;
 			path = ../../SwiftUICollectionView;
+			sourceTree = "<group>";
+		};
+		8457F3CDAA3697C712FC080C682B579E /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B4360B13E8D06DD13172AA6618ADAB7A /* Pods-SwiftUICollectionViewApp */,
+			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		A3CC6C4730A0CE471EE7E96B224704A9 /* Extensions */ = {
@@ -202,6 +193,23 @@
 			path = SupplementaryViews;
 			sourceTree = "<group>";
 		};
+		B4360B13E8D06DD13172AA6618ADAB7A /* Pods-SwiftUICollectionViewApp */ = {
+			isa = PBXGroup;
+			children = (
+				97BBCCE5FE8426E0FE6D311551EB295D /* Pods-SwiftUICollectionViewApp.modulemap */,
+				AEF20B0F132CF55BD5DE5EE0E237D0CE /* Pods-SwiftUICollectionViewApp-acknowledgements.markdown */,
+				4076E13DB4B94560B9CFA9D668ED9D5F /* Pods-SwiftUICollectionViewApp-acknowledgements.plist */,
+				639929330CAC087BA16E24F350D76616 /* Pods-SwiftUICollectionViewApp-dummy.m */,
+				DB45B9293B518C911C88981785603FF9 /* Pods-SwiftUICollectionViewApp-frameworks.sh */,
+				D6AF148C48E64AD2A7F7C10F8F564D56 /* Pods-SwiftUICollectionViewApp-Info.plist */,
+				1D82C317ECBB260DC3650D1C392C2946 /* Pods-SwiftUICollectionViewApp-umbrella.h */,
+				CD208B93378003B4D15697A894BFB3FA /* Pods-SwiftUICollectionViewApp.debug.xcconfig */,
+				33C0544DEAC201D40FDD182BF1745E92 /* Pods-SwiftUICollectionViewApp.release.xcconfig */,
+			);
+			name = "Pods-SwiftUICollectionViewApp";
+			path = "Target Support Files/Pods-SwiftUICollectionViewApp";
+			sourceTree = "<group>";
+		};
 		B439C34AA765538C1445498056D87F8D /* DecorationView */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,22 +234,14 @@
 			path = "../Example/Pods/Target Support Files/SwiftUICollectionView";
 			sourceTree = "<group>";
 		};
-		C273B95EF480A88009EE620320530B27 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				6E6CD60F3F27269320EE9BBF81238FE4 /* Pods-SwiftUICollectionView */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				A91B72584F9AFAB065CD1C4D0579305D /* Development Pods */,
 				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
-				02770928D2A4FCC051422C222C279DEC /* Products */,
-				C273B95EF480A88009EE620320530B27 /* Targets Support Files */,
+				5CD9AAE5C7C76BF6F5C838BE3CD2AAFD /* Products */,
+				8457F3CDAA3697C712FC080C682B579E /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -266,34 +266,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		73EBD92598CDB516257303C68BEBFB4C /* Headers */ = {
+		6F18D4510980E41F14968F7ABB10E275 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F86F343CA91FD9F1DF8CBA91B28E83A7 /* Pods-SwiftUICollectionView-umbrella.h in Headers */,
+				8F04CB77A9D823D4363000404CEBFF09 /* Pods-SwiftUICollectionViewApp-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6F2CEB20BB6E62AD7EDEEA2AB5FF7430 /* Pods-SwiftUICollectionView */ = {
+		A508B741D1CFF9E429839201AA4CCEB1 /* Pods-SwiftUICollectionViewApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8A524A8C2D4DF07D2F10F36C4A1F573D /* Build configuration list for PBXNativeTarget "Pods-SwiftUICollectionView" */;
+			buildConfigurationList = FFCA027E7DEEDC7C707355B271DC0FEB /* Build configuration list for PBXNativeTarget "Pods-SwiftUICollectionViewApp" */;
 			buildPhases = (
-				73EBD92598CDB516257303C68BEBFB4C /* Headers */,
-				88EC027F1F97ADD1FC61649422F8AD1E /* Sources */,
-				6E9557B8FF347AFE912069A7A0CC7ED7 /* Frameworks */,
-				A01845318EAC4446D4BACA87C075AF1B /* Resources */,
+				6F18D4510980E41F14968F7ABB10E275 /* Headers */,
+				906CABF87894430E4C85BE93B038D92D /* Sources */,
+				3B099D5FC433CA4179669A52E0CB5606 /* Frameworks */,
+				0E742B86F767094D8836DA95BC63E28F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				02C417AC4401C36D782F7E4EF6762B87 /* PBXTargetDependency */,
+				93803FB0B35EAAC74A909A6F51BC805C /* PBXTargetDependency */,
 			);
-			name = "Pods-SwiftUICollectionView";
-			productName = "Pods-SwiftUICollectionView";
-			productReference = 5024B2CF6516629A96AF13C9E4F61384 /* Pods_SwiftUICollectionView.framework */;
+			name = "Pods-SwiftUICollectionViewApp";
+			productName = "Pods-SwiftUICollectionViewApp";
+			productReference = 3906764D1CC273F7D0EF4560BB0B6EA6 /* Pods_SwiftUICollectionViewApp.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		C5F97F34F9C13B3408899C84EEDB5D16 /* SwiftUICollectionView */ = {
@@ -332,18 +332,18 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 02770928D2A4FCC051422C222C279DEC /* Products */;
+			productRefGroup = 5CD9AAE5C7C76BF6F5C838BE3CD2AAFD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6F2CEB20BB6E62AD7EDEEA2AB5FF7430 /* Pods-SwiftUICollectionView */,
+				A508B741D1CFF9E429839201AA4CCEB1 /* Pods-SwiftUICollectionViewApp */,
 				C5F97F34F9C13B3408899C84EEDB5D16 /* SwiftUICollectionView */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A01845318EAC4446D4BACA87C075AF1B /* Resources */ = {
+		0E742B86F767094D8836DA95BC63E28F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -379,22 +379,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		88EC027F1F97ADD1FC61649422F8AD1E /* Sources */ = {
+		906CABF87894430E4C85BE93B038D92D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E089AF86A54BB4ADD09E95BA29DA9A11 /* Pods-SwiftUICollectionView-dummy.m in Sources */,
+				D3C47582463062AD7A444F265A6DD396 /* Pods-SwiftUICollectionViewApp-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		02C417AC4401C36D782F7E4EF6762B87 /* PBXTargetDependency */ = {
+		93803FB0B35EAAC74A909A6F51BC805C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftUICollectionView;
 			target = C5F97F34F9C13B3408899C84EEDB5D16 /* SwiftUICollectionView */;
-			targetProxy = B49CFB9CC88BF1486A5C76AEB5663BEC /* PBXContainerItemProxy */;
+			targetProxy = 2B87EA5857C35B6E9828B2A0070A7D49 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -496,6 +496,44 @@
 			};
 			name = Release;
 		};
+		7E68C58AC1D41B77FE89A4661C7D96ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33C0544DEAC201D40FDD182BF1745E92 /* Pods-SwiftUICollectionViewApp.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SwiftUICollectionViewApp/Pods-SwiftUICollectionViewApp-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SwiftUICollectionViewApp/Pods-SwiftUICollectionViewApp.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		C3B6FBCE945A64DE9CB1B92EC8AE9EC1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 33A5C3DE1112A3CFC2A5FB6CF769AFE2 /* SwiftUICollectionView.release.xcconfig */;
@@ -532,9 +570,9 @@
 			};
 			name = Release;
 		};
-		E6C38CF896BE8CE9B1BF603438EFC48A /* Debug */ = {
+		C8C6A0407C4B856B404E84267DB8E845 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2CF68772B2409C32482A91F1BC8835BE /* Pods-SwiftUICollectionView.debug.xcconfig */;
+			baseConfigurationReference = CD208B93378003B4D15697A894BFB3FA /* Pods-SwiftUICollectionViewApp.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -546,7 +584,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SwiftUICollectionView/Pods-SwiftUICollectionView-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-SwiftUICollectionViewApp/Pods-SwiftUICollectionViewApp-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -555,7 +593,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SwiftUICollectionView/Pods-SwiftUICollectionView.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-SwiftUICollectionViewApp/Pods-SwiftUICollectionViewApp.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -568,44 +606,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		EB8B896B36BB08B2950D0F4BC96FA3D2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 547F8F10B6F78AB7CED5FC1480444280 /* Pods-SwiftUICollectionView.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SwiftUICollectionView/Pods-SwiftUICollectionView-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SwiftUICollectionView/Pods-SwiftUICollectionView.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		F4FF6A0D1970CA9705974E3CB2134802 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -694,11 +694,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8A524A8C2D4DF07D2F10F36C4A1F573D /* Build configuration list for PBXNativeTarget "Pods-SwiftUICollectionView" */ = {
+		FFCA027E7DEEDC7C707355B271DC0FEB /* Build configuration list for PBXNativeTarget "Pods-SwiftUICollectionViewApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E6C38CF896BE8CE9B1BF603438EFC48A /* Debug */,
-				EB8B896B36BB08B2950D0F4BC96FA3D2 /* Release */,
+				C8C6A0407C4B856B404E84267DB8E845 /* Debug */,
+				7E68C58AC1D41B77FE89A4661C7D96ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
