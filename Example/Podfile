@@ -1,10 +1,11 @@
 source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/michzio/PodSpecs.git'
 
 platform :ios, '16.0'
 use_frameworks!
 
 target 'SwiftUICollectionViewApp' do
 
-  pod 'SwiftUICollectionView', :path => '../SwiftUICollectionView'
+  pod 'SwiftUICollectionView', '~> 0.0'
 
 end
