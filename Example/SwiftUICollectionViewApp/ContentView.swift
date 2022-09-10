@@ -37,10 +37,13 @@ struct ContentView: View {
             content: { indexPath, item in
                 let section = sections[indexPath.section]
                 AnyView(
-                    Text("\(section.rawValue) (\(indexPath.section), \(indexPath.row))")
-                        .padding(16)
-                        .foregroundColor(Color.white)
-                        .background(section == .feature ? Color.green : Color.red)
+                    ZStack {
+                        section == .feature ? Color.green : Color.red
+
+                        Text("\(section.rawValue) (\(indexPath.section), \(indexPath.row))")
+                            .padding(16)
+                            .foregroundColor(Color.white)
+                    }
                 )
             })
             
