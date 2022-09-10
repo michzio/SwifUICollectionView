@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "SwiftUICollectionView"
-  s.version = "0.0.7"
+  s.version = "0.0.8"
   s.summary = "SwiftUI representable of UIKit CollectionView that supports compositional layout."
 
   s.swift_version = '5.6'
@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.exclude_files = [
     "Example/**/*.swift", 
     "SwiftUICollectionView/SwiftUICollectionViewTests/**/*.swift", 
-    "SwiftUICollectionView/SwiftUICollectionView/Package.swift"
+    "SwiftUICollectionView/Package.swift"
   ]
 
   s.framework = "UIKit"
