@@ -1,5 +1,5 @@
 PODS:
-  - SwiftUICollectionView (0.0.7)
+  - SwiftUICollectionView (0.0.9)
 
 DEPENDENCIES:
   - SwiftUICollectionView (from `../SwiftUICollectionView`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../SwiftUICollectionView"
 
 SPEC CHECKSUMS:
-  SwiftUICollectionView: 7f9a87f1d369c2d769a93a551f073659e583016f
+  SwiftUICollectionView: 2a75c88b8b431e7b4c50411107e025479ba7b456
 
 PODFILE CHECKSUM: 9a1452a7a2e894f254370980293834ce1f7f2aa1
 

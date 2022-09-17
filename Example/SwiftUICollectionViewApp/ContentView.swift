@@ -24,15 +24,17 @@ struct ContentView: View {
                     .categories : Item.categoryItems
                 ],
                 supplementaryKinds: [UICollectionView.elementKindSectionHeader, UICollectionView.elementKindSectionFooter],
-                supplementaryContent: { kind, indexPath, item in
-                    switch kind {
-                    case UICollectionView.elementKindSectionHeader:
-                        return AnyView(Text("Header").font(.system(size: indexPath.section == 0 ? 30 : 16)))
-                    case UICollectionView.elementKindSectionFooter:
-                        return AnyView(Text("Footer"))
-                    default:
-                        return AnyView(EmptyView())
-                    }
+                supplementaryContent: { kind, indexPath, section, item in
+                    AnyView(Group {
+                        switch kind {
+                        case UICollectionView.elementKindSectionHeader:
+                            Text("Header").font(.system(size: indexPath.section == 0 ? 30 : 16))
+                        case UICollectionView.elementKindSectionFooter:
+                            Text("Footer")
+                        default:
+                            EmptyView()
+                        }
+                    })
                 },
             content: { indexPath, item in
                 let section = sections[indexPath.section]

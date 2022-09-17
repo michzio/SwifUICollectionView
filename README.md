@@ -33,7 +33,7 @@ dependencies: [
                     .categories : Item.categoryItems
                 ],
                 supplementaryKinds: [UICollectionView.elementKindSectionHeader, UICollectionView.elementKindSectionFooter],
-                supplementaryContent: { kind, indexPath, item in
+                supplementaryContent: { kind, indexPath, section, item in
                     switch kind {
                     case UICollectionView.elementKindSectionHeader:
                         return AnyView(Text("Header").font(.system(size: indexPath.section == 0 ? 30 : 16)))

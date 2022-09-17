@@ -21,7 +21,7 @@ public struct CollectionView<Section: Hashable, Item: Hashable>: UIViewControlle
     
     // MARK: - Actions
     private let content: (_ indexPath: IndexPath, _ item: Item) -> AnyView
-    private let supplementaryContent: ((_ kind: String, _ indexPath: IndexPath, _ item: Item?) -> AnyView)?
+    private let supplementaryContent: ((_ kind: String, _ indexPath: IndexPath, _ section: Section?, _ item: Item?) -> AnyView)?
 
     private let snapshotProvider:(() -> NSDiffableDataSourceSnapshot<Section, Item>)?
     private let selectionAction: ((_ collectionView: UICollectionView, _ item: Item, _ indexPath: IndexPath) -> Void)?
@@ -35,7 +35,7 @@ public struct CollectionView<Section: Hashable, Item: Hashable>: UIViewControlle
         snapshotProvider: (() -> NSDiffableDataSourceSnapshot<Section, Item>)? = nil,
         selectedItem: Binding<Item?>? = nil,
         selectionAction: ((_ collectionView: UICollectionView, _ item: Item, _ indexPath: IndexPath) -> Void)? = nil,
-        supplementaryContent: ((_ kind: String, _ IndexPath: IndexPath, _ item: Item?) -> AnyView)? = nil,
+        @ViewBuilder supplementaryContent: @escaping (_ kind: String, _ IndexPath: IndexPath, _ section: Section?, _ item: Item?) -> AnyView,
         @ViewBuilder content:  @escaping (_ indexPath: IndexPath, _ item: Item) -> AnyView
     ) {
         self.layout = layout
@@ -50,6 +50,31 @@ public struct CollectionView<Section: Hashable, Item: Hashable>: UIViewControlle
         self.supplementaryKinds = supplementaryKinds
         self.supplementaryContent = supplementaryContent
         
+        self.content = content
+    }
+
+    public init(
+        layout: UICollectionViewLayout,
+        sections: [Section],
+        items: [Section: [Item]],
+        animateChanges: Bool? = nil,
+        snapshotProvider: (() -> NSDiffableDataSourceSnapshot<Section, Item>)? = nil,
+        selectedItem: Binding<Item?>? = nil,
+        selectionAction: ((_ collectionView: UICollectionView, _ item: Item, _ indexPath: IndexPath) -> Void)? = nil,
+        @ViewBuilder content:  @escaping (_ indexPath: IndexPath, _ item: Item) -> AnyView
+    ) {
+        self.layout = layout
+
+        self.sections = sections
+        self.items = items
+        self.snapshotProvider = snapshotProvider
+        self.selectionAction = selectionAction
+        self.animateChanges = animateChanges
+        self.selectedItem = selectedItem
+
+        self.supplementaryKinds = []
+        self.supplementaryContent = nil
+
         self.content = content
     }
 
