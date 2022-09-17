@@ -16,7 +16,7 @@ public class CollectionViewController<Section, Item>: UIViewController, UICollec
     var snapshot: NSDiffableDataSourceSnapshot<Section, Item>!
 
     var supplementaryKinds: [String] = []
-    var supplementaryContent: ((_ kind: String, _ indexPath: IndexPath, _ item: Item?) -> AnyView)?
+    var supplementaryContent: ((_ kind: String, _ indexPath: IndexPath, _ section: Section?, _ item: Item?) -> AnyView)?
     var content: ((_ indexPath: IndexPath, _ item: Item) -> AnyView)!
 
     var onSelectItem: ((_ collectionView: UICollectionView, _ item: Item, _ indexPath: IndexPath) -> Void)?
@@ -157,9 +157,16 @@ extension CollectionViewController {
             fatalError("Could not load supplementary view")
         }
 
+        let section: Section?
+        if #available(iOS 15.0, *) {
+            section = dataSource.sectionIdentifier(for: indexPath.section)
+        } else {
+            section = nil
+        }
+
         let item = dataSource.itemIdentifier(for: indexPath)
 
-        guard let content = supplementaryContent?(kind, indexPath, item) else {
+        guard let content = supplementaryContent?(kind, indexPath, section, item) else {
             fatalError("Supplementary view content not provided for kind: \(kind), indexPath: \(indexPath). Please provide supplementaryContent closure parameter to CollectionView returning some View and provide kind in supplementaryKinds array parameter. Or remove this kind: \(kind) from layout definition.")
         }
 

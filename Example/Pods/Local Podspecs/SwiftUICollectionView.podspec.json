@@ -1,6 +1,6 @@
 {
   "name": "SwiftUICollectionView",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "summary": "SwiftUI representable of UIKit CollectionView that supports compositional layout.",
   "swift_versions": "5.6",
   "platforms": {
@@ -17,13 +17,12 @@
   },
   "source": {
     "git": "https://github.com/michzio/SwifUICollectionView.git",
-    "tag": "0.0.7"
+    "tag": "0.0.9"
   },
   "source_files": "SwiftUICollectionView/**/*.swift",
   "exclude_files": [
     "Example/**/*.swift",
-    "SwiftUICollectionView/SwiftUICollectionViewTests/**/*.swift",
-    "SwiftUICollectionView/SwiftUICollectionView/Package.swift"
+    "SwiftUICollectionView/SwiftUICollectionViewTests/**/*.swift"
   ],
   "frameworks": "UIKit",
   "swift_version": "5.6"
